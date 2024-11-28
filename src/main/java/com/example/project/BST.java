@@ -153,21 +153,23 @@ public class BST<T> {
 		}
 		return p;
 	}
-    public int countNodesIn ( int k ) {
-    	BSTNode <T > n = root ;
-    	while ( n != null ) {
-    	if ( n . key == k )
-    	break;
-    	else if ( k < n . key )
-    	n = n . left ;
-    	else
-    	n = n . right ;
-    	}
-    	return countNodesInRec ( n ) ;
-    	}
-    	private int countNodesInRec ( BSTNode <T > n ) {
-    	if ( n == null )
-    	return 0;
-    	return 1 + countNodesInRec ( n . left ) + countNodesInRec ( n . right ) ;
-    	}
+
+	public int countNodesIn(int k) {
+		BSTNode<T> n = root;
+		while (n != null) {
+			if (n.key == k)
+				break;
+			else if (k < n.key)
+				n = n.left;
+			else
+				n = n.right;
+		}
+		return countNodesInRec(n);
+	}
+
+		private int countNodesInRec(BSTNode<T> n) {
+			if (n == null)
+				return 0;
+			return 1 + countNodesInRec(n.left) + countNodesInRec(n.right);
+		}
 }
