@@ -9,7 +9,7 @@ public class TestTree {
    public void testCountLeaves1()
    {
       BT<Integer> t = new BT<Integer>();
-      assertEquals(0, t.countLeaves());
+      assertEquals(0, t.countLeafs());
       assertEquals(0, TreeUser.countLeaves(t));
    }
    @Test
@@ -17,7 +17,7 @@ public class TestTree {
    {
       BT<Integer> t = new BT<Integer>();
       t.insert(Relative.Root, 1);
-      assertEquals(1, t.countLeaves());
+      assertEquals(1, t.countLeafs());
       assertEquals(1, TreeUser.countLeaves(t));
    }
    @Test
@@ -26,7 +26,7 @@ public class TestTree {
       BT<Integer> t = new BT<Integer>();
       t.insert(Relative.Root, 1);
       t.insert(Relative.LeftChild, 2);
-      assertEquals(1, t.countLeaves());
+      assertEquals(1, t.countLeafs());
       assertEquals(1, TreeUser.countLeaves(t));
    }
    @Test
@@ -37,7 +37,7 @@ public class TestTree {
       t.insert(Relative.LeftChild, 2);
       t.find(Relative.Root);
       t.insert(Relative.RightChild, 3);
-      assertEquals(2, t.countLeaves());
+      assertEquals(2, t.countLeafs());
       assertEquals(2, TreeUser.countLeaves(t));
    }
    @Test
@@ -49,7 +49,7 @@ public class TestTree {
       t.insert(Relative.RightChild, 3);
       t.insert(Relative.LeftChild, 4);
       t.insert(Relative.RightChild, 5);
-      assertEquals(1, t.countLeaves());
+      assertEquals(1, t.countLeafs());
       assertEquals(1, TreeUser.countLeaves(t));
    }
    @Test
@@ -61,7 +61,7 @@ public class TestTree {
       t.insert(Relative.LeftChild, 3);
       t.insert(Relative.LeftChild, 4);
       t.insert(Relative.LeftChild, 5);
-      assertEquals(1, t.countLeaves());
+      assertEquals(1, t.countLeafs());
       assertEquals(1, TreeUser.countLeaves(t));
       t.find(Relative.Root);
       t.find(Relative.RightChild);
@@ -69,7 +69,7 @@ public class TestTree {
       t.find(Relative.LeftChild);
       assertEquals(t.retrieve(), 4);
       t.insert(Relative.RightChild, 10);
-      assertEquals(2, t.countLeaves());
+      assertEquals(2, t.countLeafs());
       assertEquals(2, TreeUser.countLeaves(t));
    }
    @Test
@@ -88,7 +88,7 @@ public class TestTree {
       t.insert(Relative.RightChild, 6);
       t.find(Relative.Parent);
       t.insert(Relative.LeftChild, 7);
-      assertEquals(4, t.countLeaves());
+      assertEquals(4, t.countLeafs());
       assertEquals(4, TreeUser.countLeaves(t));
    }
    @Test
